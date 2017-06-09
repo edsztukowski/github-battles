@@ -1,4 +1,17 @@
 var React = require("react");
+var PropTypes = require("prop-types");
+
+class PlayerInput extends React.Component {
+  render() {
+    return (
+
+    )
+  }
+ }
+
+ PlayerInput.propTypes = {
+   
+ }
 
 class Battle extends React.Component {
   constructor(props) {
@@ -18,13 +31,32 @@ class Battle extends React.Component {
         newState[id + "Name"] = username;
         newState[id + "Image"] = 'https://github.com/' + username + '.png?size=200';
         return newState;
-      }
     })
   }
   render() {
+    var playerOneName = this.state.playerOneName;
+    var playerTwoName = this.state.playerTwoName;
+
    return (
     <div>
-      
+      <div className="row">
+        {!playerOneName &&
+          <PlayerInput
+            id="playerOne"
+            label="Player One"
+            onSubmit={this.handleSubmit}
+          />
+        }
+
+        {!playerTwoName &&
+          <PlayerInput
+            id="playerTwo"
+            label="Player Two"
+            onSubmit={this.handleSubmit}
+          />
+        }
+
+      </div>
     </div>
    )
  }}
