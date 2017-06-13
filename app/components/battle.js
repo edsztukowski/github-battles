@@ -8,7 +8,7 @@ function PlayerPreview(props) {
         <img
           className="avatar"
           src={props.avatar}
-          alt={"Avatar for " props.username}
+          alt={"Avatar for " + props.username}
           />
         <h2 className="username">@{props.username}</h2>
       </div>
@@ -96,6 +96,7 @@ class Battle extends React.Component {
       playerTwoImage: null
     }
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleReset = this.handleReset.bind(this);
   }
   handleSubmit(id, username) {
     this.setState(function() {
@@ -104,6 +105,14 @@ class Battle extends React.Component {
         newState[id + "Image"] = 'https://github.com/' + username + '.png?size=200';
         return newState;
     });
+  }
+  handleReset(id) {
+    this.setState(function() {
+      var newState = {};
+        newState[id + "Name"] = "";
+        newState[id + "Image"] = null;
+        return newState;
+    })
   }
   render() {
     var playerOneName = this.state.playerOneName;
