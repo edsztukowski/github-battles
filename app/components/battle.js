@@ -19,13 +19,13 @@ class PlayerInput extends React.Component {
     })
   }
 
-handleSubmit(event) {
-  event.preventDefault();
-  this.props.onSubmit(
-    this.props.id,
-    this.state.username
-  )
-}
+  handleSubmit(event) {
+    event.preventDefault();
+    this.props.onSubmit(
+      this.props.id,
+      this.state.username
+    )
+  }
 
   render() {
     return (
@@ -104,6 +104,7 @@ class Battle extends React.Component {
       </div>
     </div>
    )
- }}
+ }
+}
 
 module.exports = Battle;
