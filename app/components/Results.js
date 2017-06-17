@@ -1,9 +1,10 @@
 var React = require("react");
 var queryString = require('query-string');
 var api = require('../utils/api')
+var Link = require('react-router-dom').Link
 
 class Results extends React.Component {
-  construction(props) {
+  constructor(props) {
     super(props);
 
     this.state = {
@@ -49,8 +50,17 @@ class Results extends React.Component {
       return <p>Loading</p>
     }
 
+    if (error) {
+      return (
+        <div>
+          <p>{error}</p>
+          <Link to='/battle'>Reset</Link>
+        </div>
+      )
+    }
+
     return (
-      <div>Results</div>
+      <div>{JSON.stringify(this.state, null, 2)}</div>
     )
   }
 }
