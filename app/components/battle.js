@@ -65,7 +65,7 @@ class PlayerInput extends React.Component {
           id="username"
           placeholder="github username"
           type="text"
-          autocomplete="off"
+          autoComplete="off"
           value={this.state.username}
           onChange={this.handleChange}
         />
