@@ -1,3 +1,5 @@
+var React = require('react')
+
 function PlayerPreview(props) {
   return (
     <div>
@@ -24,3 +26,5 @@ PlayerPreview.propTypes = {
   id: PropTypes.string.isRequired,
   onReset: PropTypes.func.isRequired
 }
+
+module.exports = PlayerPreview;
